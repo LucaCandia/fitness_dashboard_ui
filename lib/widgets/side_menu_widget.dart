@@ -1,3 +1,4 @@
+import 'package:fitness_dashboard_ui/const/constant.dart';
 import 'package:fitness_dashboard_ui/data/side_menu_data.dart';
 import 'package:flutter/material.dart';
 
@@ -29,26 +30,48 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
   }
 
   Widget buildMenuEntry(SideMenuData data, int index){
-    return Row(
-      children: [
-        //obtenemos los iconos 
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
-          child: Icon(data.menu[index].icon,
-          color: Colors.grey,),
-        ),
-        // y tambien le mostramos un texto
-        Text(
-          data.menu[index].title,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-            fontWeight: FontWeight.normal,
-          ),
-        )
-      ],
-      
+    //genera una entrada del menú lateral.
+     
+    final isSelected = selectdIndex == index;
+    
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(borderRadius: const BorderRadius.all(
+        Radius.circular(6.0),
         
+      ),
+      color:  isSelected? selectionColor : Colors.transparent),
+      child: InkWell(
+        //**InkWell es sensible a toques y cuando se toca, ejecuta la función proporcionada en su parámetro onTap.
+        // En este caso, al tocar la entrada de menú, se llama a setState para actualizar el 
+        //estado de la variable selectdIndex al valor de index */
+      
+        onTap: () => setState(() {
+          selectdIndex = index;
+        }),
+        child: Row(
+          children: [
+            //obtenemos los iconos 
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
+              child: Icon(data.menu[index].icon,
+              color: isSelected? Colors.black : Colors.grey),
+            ),
+            // y tambien le mostramos un texto
+            Text(
+              data.menu[index].title,
+              
+              style: TextStyle(
+                fontSize: 16,
+                color: isSelected? Colors.black : Colors.grey,
+                fontWeight: isSelected? FontWeight.w600 : FontWeight.normal,
+              ),
+            )
+          ],
+          
+            
+        ),
+      ),
     );
   }
 
