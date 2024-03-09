@@ -14,12 +14,35 @@ class ActivityDetailsCard extends StatelessWidget {
       itemCount: healthDetails.healtData.length, //Cantidad de cards a generar dependiendo de que tantos datos de salud hay. 
       shrinkWrap: true,
       physics:  const ScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4,crossAxisSpacing: 15, mainAxisSpacing: 12),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4,crossAxisSpacing: 15, mainAxisSpacing: 12.0, ),
       itemBuilder: (context, index) => CustomCard(child: Column(
+        //alineamos todo al centro para que se muestren los datos en el centro valga la redundancia jadsaj 
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          //icono
+          Image.asset(healthDetails.healtData[index].icon,
+          width: 30,
+          height: 30,),
+          Padding(padding: const EdgeInsets.only(top: 15, bottom: 4),
+          child: Text(
+            healthDetails.healtData[index].value,
+            style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,),
+          ),),
+          Text(healthDetails.healtData[index].title,
+          style: const TextStyle(
+                fontSize: 13,
+                color: Colors.grey,
+                fontWeight: FontWeight.normal,),)
 
+        ],
+          
 
         
-      ),), //dijimos que customCard pedia un widget así que lo metmos dentro de un containar. 
+      ),),
 
 
 

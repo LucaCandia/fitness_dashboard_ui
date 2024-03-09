@@ -6,7 +6,7 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: TextField(
+    return TextField(
       decoration: InputDecoration(
         //Con esto rellanamos el fondo
         filled: true,
@@ -25,6 +25,6 @@ class HeaderWidget extends StatelessWidget {
         color: Colors.grey,
         size: 21,)
       ),
-    ));
+    );
   }
 }

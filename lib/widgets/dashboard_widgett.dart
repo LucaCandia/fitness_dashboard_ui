@@ -23,7 +23,7 @@ class DashboardWidget extends StatelessWidget {
       // ignore: prefer_const_literals_to_create_immutables
       children: [
         const SizedBox(height: 18,),
-        const HeaderWidget  (), // barra de busqueda
+        const HeaderWidget (), // barra de busqueda
         const SizedBox(height: 18,),
         const ActivityDetailsCard(),
         const SizedBox(height: 18,),
