@@ -1,5 +1,5 @@
 
-import 'package:fitness_dashboard_ui/data/health_model.dart';
+import 'package:fitness_dashboard_ui/models/health_model.dart';
 
 /**los datos que se muestran en el card debajo de la barra
  * de busqueda. Les damos los datos a los parametros anteriormente creado en health model.
