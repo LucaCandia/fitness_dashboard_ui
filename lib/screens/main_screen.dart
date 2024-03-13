@@ -1,5 +1,9 @@
 
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:fitness_dashboard_ui/widgets/pie_chart_widget.dart';
 import 'package:fitness_dashboard_ui/widgets/side_menu_widget.dart';
+import 'package:fitness_dashboard_ui/widgets/sumary_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_dashboard_ui/widgets/dashboard_widgett.dart';
 
@@ -13,7 +17,7 @@ class MainScreenn extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: Row(
         children: [
-          Expanded(
+           Expanded(
             flex: 2, // con esto ocupa el 16% de la pantalla
             child: SizedBox(
               child: SideMenuWidget()),
@@ -23,7 +27,7 @@ class MainScreenn extends StatelessWidget {
               child: DashboardWidget(),),
             Expanded(
               flex: 3,  // 25% de pantalla
-              child: Container(color: Colors.transparent,))
+              child: SumaryWidget())
         ],
       )),
     );
